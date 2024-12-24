@@ -1,11 +1,11 @@
-
 import type { NextPage } from "next";
-import { Navbar } from "../constants/index";
+import { Navbar, Hero } from "../constants/index";
 
 const Home: NextPage = () => {
   return (
     <section className="">
       <Navbar />
+      <Hero />
     </section>
   );
 };

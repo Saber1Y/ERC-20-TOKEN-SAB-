@@ -4,7 +4,7 @@ import { IoMdFiling } from "react-icons/io";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 const Navbar = () => {
   return (
-    <div className="top fixed top-0 left-0 w-full  shadow-lg z-50 bg-[#0d0d27]">
+    <div className=" bg-[#0d0d27]">
       <nav className="flex flex-row justify-between items-center py-4">
         <svg
           xmlns="http://www.w3.org/2000/svg"
