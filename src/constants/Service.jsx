@@ -63,14 +63,13 @@ const Service = () => {
             </div>
           </div>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, i) => (
             <div
               key={i + 1}
-              className="bg-white shadow-md rounded-lg p-6 text-center animate-fadeInUp"
-              data-animation="fadeInUp"
-              data-animation-delay={`0.${i + 1}s`}
+              className="bg-white shadow-md rounded-lg p-6 text-center"
+              data-aos="fade-up"
+              data-aos-delay={`${i * 100}`} 
             >
               <h4 className="text-2xl font-bold mb-2">{service.title}</h4>
               <p className="text-gray-600">{service.description}</p>

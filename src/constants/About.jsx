@@ -6,6 +6,9 @@ const About = () => {
   return (
     <section
       id="about"
+      data-aos="zoom-in-up"
+      data-aos-easing="linear"
+      data-aos-duration="1000"
       className="flex flex-row justify-between items-center px-4 py-8"
     >
       <div className="container flex flex-row justify-between items-center flex-wrap gap-8">

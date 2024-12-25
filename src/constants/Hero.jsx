@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="flex flex-row items-center justify-between p-8  bg-[#0d0d27]  flex-wrap">
+    <section data-aos="fade-up" className="flex flex-row items-center justify-between p-8  bg-[#0d0d27]  flex-wrap">
       <div className="max-w-1/2 p-10">
         <h1
           className="text-[60px] text-white font-bold  leading-tight"
