@@ -3,6 +3,7 @@ import Hero from "./Hero";
 import Service from "./Service";
 import About from "./About";
 import Footer from "./Footer";
+import Token from "./Token";
 
 export {
     Navbar,
@@ -10,4 +11,5 @@ export {
     Service,
     About,
     Footer,
+    Token,
 }
