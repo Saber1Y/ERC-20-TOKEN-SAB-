@@ -1,12 +1,13 @@
 import type { NextPage } from "next";
-import { Navbar, Hero, Service } from "../constants/index";
+import { Navbar, Hero, Service, About } from "../constants/index";
 
 const Home: NextPage = () => {
   return (
-    <section className="">
+    <section className="bg-[#0d0d27]">
       <Navbar />
       <Hero />
       <Service />
+      <About />
     </section>
   );
 };
