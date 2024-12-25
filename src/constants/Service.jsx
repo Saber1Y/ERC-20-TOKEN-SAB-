@@ -47,12 +47,18 @@ const Service = () => {
                 Benefits of SAB Token
               </h1>
               <p
-                className="text-white animate-fadeInUp"
+                className="text-white font-bold text-[18px]"
                 data-animation="fadeInUp"
                 data-animation-delay="0.2s"
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                hic suscipit incidunt nobis.
+                Fast and Secure: Enjoy quick and secure transactions with
+                blockchain-backed technology. Transparent System: Our platform
+                ensures complete transparency in pricing and transactions.
+                Community-Centric: Stay connected and grow with a vibrant
+                community of like-minded users. Future-Ready: Be part of an
+                ever-evolving ecosystem designed for long-term success. 24/7
+                Accessibility: Always accessible, empowering you to manage
+                tokens anytime, anywhere.
               </p>
             </div>
           </div>
