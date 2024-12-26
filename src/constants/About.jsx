@@ -9,9 +9,9 @@ const About = () => {
       data-aos="zoom-in-up"
       data-aos-easing="linear"
       data-aos-duration="1000"
-      className="flex flex-row justify-between items-center px-4 py-8"
+      className="flex flex-col md:flex-row justify-between items-center px-4 py-8"
     >
-      <div className="container flex flex-row justify-between items-center flex-wrap gap-8">
+      <div className="flex flex-col md:flex-row justify-between items-center flex-wrap gap-8">
         {/* Image Section */}
         <div className="flex-1 flex justify-center">
           <Image

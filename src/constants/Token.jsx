@@ -7,10 +7,10 @@ const Token = () => {
   return (
     <section
       id="token"
-      className="bg-light_dark relative bg-cover bg-fixed"
+      className="relative  bg-cover bg-fixed"
       style={{ backgroundImage: "url('/assets/images/token_bg.png')" }}
     >
-      <div className="container mx-auto px-4 py-20">
+      <div className="  mx-auto px-4 py-20">
         <div className="text-center mb-12">
           <h4 className="text-3xl font-bold text-white mb-4">SAB Token Sale</h4>
           <p className="text-gray-300 text-[20px] font-semibold">
@@ -19,9 +19,9 @@ const Token = () => {
           </p>
         </div>
 
-        <div className="flex  justify-between gap-8 items-center">
+        <div className="flex flex-col md:flex-row p-8  justify-between gap-8 items-center">
           {/* Start Time, End Time, and Exchange Rate */}
-          <div className="space-y-8">
+          <div className="space-y-8" data-aos="fade-down">
             <div>
               <h3 className="text-xl font-bold text-white">Start Time</h3>
               <p className="text-gray-300">26th, December 2024</p>
@@ -39,7 +39,7 @@ const Token = () => {
           </div>
 
           {/* Token Purchase Section */}
-          <div className="bg-gray-800 p-8 rounded-lg shadow-lg text-center w-[40%]">
+          <div className="bg-gray-800 p-8 rounded-lg shadow-lg text-center w-[80%] md:w-[40%]">
             <div>
               <input
                 type="number"
@@ -59,7 +59,7 @@ const Token = () => {
           </div>
 
           {/* Market Info */}
-          <div className="space-y-8">
+          <div className="space-y-8" data-aos="fade-down">
             <div>
               <h3 className="text-xl font-bold text-white">
                 Low - High 24 hrs
