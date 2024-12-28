@@ -34,7 +34,7 @@ const Token = () => {
               <h3 className="text-xl font-bold text-white">
                 Token Exchange Rate
               </h3>
-              <p className="text-gray-300">0.2 ETH = 1 SAB</p>
+              <p className="text-gray-300">1 ETH = 1 $SAB</p>
             </div>
           </div>
 

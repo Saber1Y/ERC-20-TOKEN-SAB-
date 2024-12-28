@@ -11,7 +11,7 @@ const Hero = () => {
           data-animation="fadeInUp"
           data-animation-delay="1.1s"
         >
-          Welcome to the Future <br /> of Web3 with SAB <br /> Token.
+          Welcome to the Future <br /> of Web3 with $SAB <br /> Token.
         </h1>
         <h5
           className="text-white font-bold text-xl my-2"
@@ -43,7 +43,7 @@ const Hero = () => {
         <Image
           src={service}
           height={600}
-          className="object-contain max-w-full h-[500px] mt-5 rounded-lg shadow-[0_2px_0_2px_#ac6aff]"
+          className="object-contain max-w-full h-[500px] mt-20 rounded-lg shadow-[0_2px_0_2px_#ac6aff]"
           data-animation="fadeInUp"
           data-animation-delay="1.1s"
           width={600}
