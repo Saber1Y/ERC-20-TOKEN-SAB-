@@ -52,16 +52,13 @@ const Navbar = () => {
           Home
         </motion.li>
         <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
-          Service
+          <a href="#service">Service</a>
         </motion.li>
         <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
-          About
+          <a href="#about">About</a>
         </motion.li>
         <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
-          Token
-        </motion.li>
-        <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
-          Contact
+          <a href="#token">Token</a>
         </motion.li>
       </ul>
 
@@ -87,44 +84,21 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="absolute top-[70px] left-0 w-full bg-white shadow-lg p-5 md:hidden">
           <ul className="flex flex-col items-center text-black space-y-4 text-[18px] font-medium cursor-pointer">
-            <motion.li
-              className="hover:text-blue-600 transition duration-300"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
+            <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
               Home
             </motion.li>
-            <motion.li
-              className="hover:text-blue-600 transition duration-300"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              Service
+            <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
+              <a href="#service">Service</a>
             </motion.li>
-            <motion.li
-              className="hover:text-blue-600 transition duration-300"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              About
+            <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
+              <a href="#about">About</a>
             </motion.li>
-            <motion.li
-              className="hover:text-blue-600 transition duration-300"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              Token
+            <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
+              <a href="#token">Token</a>
             </motion.li>
-            <motion.li
-              className="hover:text-blue-600 transition duration-300"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              Contact
-            </motion.li>
-          <div className="mt-6">
-            <ConnectButton />
-          </div>
+            <div className="mt-6">
+              <ConnectButton />
+            </div>
           </ul>
         </div>
       )}

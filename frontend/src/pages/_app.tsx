@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+import TokenSoldNotification from "../components/TokenSoldNotification";
 
 import { config } from "../wagmi";
 const client = new QueryClient();
@@ -26,6 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <WagmiProvider config={config}>
       <QueryClientProvider client={client}>
         <RainbowKitProvider>
+          <TokenSoldNotification />
           <Component {...pageProps} />
         </RainbowKitProvider>
       </QueryClientProvider>

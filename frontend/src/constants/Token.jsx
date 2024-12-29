@@ -1,13 +1,21 @@
 "use client";
-import React, { useState } from "react";
-import { useWriteContract, useAccount } from "wagmi";
+import React, { useState, useEffect } from "react";
+import { useWriteContract, useAccount, useReadContract } from "wagmi";
 
 const Token = ({ contractAddress, abi }) => {
+  const [totalSupply, setTotalSupply] = useState(0);
   const [address, setAddress] = useState("");
   const [amount, setAmount] = useState("");
   const { isConnected } = useAccount();
 
   const { writeContractAsync: mintToken } = useWriteContract();
+
+  const { data, refetch } = useReadContract({
+    address: contractAddress,
+    abi: abi,
+    functionName: "getTotalSupply",
+    args: [],
+  });
 
   const handleTokenMint = async () => {
     if (!isConnected) {
@@ -28,6 +36,12 @@ const Token = ({ contractAddress, abi }) => {
       console.error("error", error.message);
     }
   };
+
+  useEffect(() => {
+    if (data) {
+      setTotalSupply(Number(data)); // Convert BigNumber to a regular number
+    }
+  }, [data]);
 
   return (
     <section
@@ -105,7 +119,7 @@ const Token = ({ contractAddress, abi }) => {
             </div>
             <div>
               <h3 className="text-xl font-bold text-white">Total Token Sold</h3>
-              <p className="text-gray-300">Coming Soon</p>
+              <p className="text-gray-300">{totalSupply}</p>
             </div>
             <div>
               <h3 className="text-xl font-bold text-white">
