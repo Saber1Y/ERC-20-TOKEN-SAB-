@@ -1,16 +1,41 @@
 "use client";
 import React, { useState } from "react";
+import { useWriteContract, useAccount } from "wagmi";
 
-const Token = () => {
-  const [nToken, setnToken] = useState(1);
+const Token = ({ contractAddress, abi }) => {
+  const [address, setAddress] = useState("");
+  const [amount, setAmount] = useState("");
+  const { isConnected } = useAccount();
+
+  const { writeContractAsync: mintToken } = useWriteContract();
+
+  const handleTokenMint = async () => {
+    if (!isConnected) {
+      alert("Please connect your wallet to mint tokens");
+      return;
+    }
+
+    try {
+      await mintToken({
+        address: contractAddress,
+        abi: abi,
+        functionName: "mint",
+        args: [address, amount],
+      });
+      alert("Token minted successfully");
+    } catch (error) {
+      alert("An error occurred while minting token");
+      console.error("error", error.message);
+    }
+  };
 
   return (
     <section
       id="token"
-      className="relative  bg-cover bg-fixed"
+      className="relative bg-cover bg-fixed"
       style={{ backgroundImage: "url('/assets/images/token_bg.png')" }}
     >
-      <div className="  mx-auto px-4 py-20">
+      <div className="mx-auto px-4 py-20">
         <div className="text-center mb-12">
           <h4 className="text-3xl font-bold text-white mb-4">SAB Token Sale</h4>
           <p className="text-gray-300 text-[20px] font-semibold">
@@ -19,8 +44,7 @@ const Token = () => {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row p-8  justify-between gap-8 items-center">
-          {/* Start Time, End Time, and Exchange Rate */}
+        <div className="flex flex-col md:flex-row p-8 justify-between gap-8 items-center">
           <div className="space-y-8" data-aos="fade-down">
             <div>
               <h3 className="text-xl font-bold text-white">Start Time</h3>
@@ -37,23 +61,36 @@ const Token = () => {
               <p className="text-gray-300">1 ETH = 1 $SAB</p>
             </div>
           </div>
-
           {/* Token Purchase Section */}
           <div className="bg-gray-800 p-8 rounded-lg shadow-lg text-center w-[80%] md:w-[40%]">
-            <div>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Mint SAB Tokens
+            </h3>
+            <div className="mb-4">
+              <input
+                type="text"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                placeholder="Recipient Address"
+                className="w-full p-3 rounded border-2 border-gray-600 bg-gray-900 text-white focus:outline-none focus:ring focus:ring-blue-500"
+              />
+            </div>
+            <div className="mb-4">
               <input
                 type="number"
-                required
-                placeholder="1"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                placeholder="Amount to Mint"
                 min="1"
                 className="w-full p-3 rounded border-2 border-gray-600 bg-gray-900 text-white focus:outline-none focus:ring focus:ring-blue-500"
-                onChange={(e) => setnToken(e.target.value)}
-                value={nToken}
               />
             </div>
             <div className="mt-6">
-              <button className="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700">
-                Buy Token
+              <button
+                onClick={handleTokenMint}
+                className="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700"
+              >
+                Mint Tokens
               </button>
             </div>
           </div>
