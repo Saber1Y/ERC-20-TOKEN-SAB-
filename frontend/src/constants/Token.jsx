@@ -13,7 +13,7 @@ const Token = ({ contractAddress, abi }) => {
   const { data, refetch } = useReadContract({
     address: contractAddress,
     abi: abi,
-    functionName: "getTotalSupply",
+    functionName: "Minted",
     args: [],
   });
 
@@ -39,7 +39,8 @@ const Token = ({ contractAddress, abi }) => {
 
   useEffect(() => {
     if (data) {
-      setTotalSupply(Number(data)); // Convert BigNumber to a regular number
+      console.log("Token minted event received", data);
+      // setTotalSupply(Number(data)); // Convert BigNumber to a regular number
     }
   }, [data]);
 
@@ -112,9 +113,7 @@ const Token = ({ contractAddress, abi }) => {
           {/* Market Info */}
           <div className="space-y-8" data-aos="fade-down">
             <div>
-              <h3 className="text-xl font-bold text-white">
-                Low - High 24 hrs
-              </h3>
+              <h3 className="text-xl font-bold text-white">Token market cap</h3>
               <p className="text-gray-300">$2437</p>
             </div>
             <div>
