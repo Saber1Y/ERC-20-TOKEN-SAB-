@@ -104,7 +104,16 @@ const Navbar = () => {
       )}
 
       <div className="hidden md:block">
-        <ConnectButton />
+        <ConnectButton
+          accountStatus={{
+            smallScreen: "avatar",
+            largeScreen: "full",
+          }}
+          showBalance={{
+            smallScreen: false,
+            largeScreen: true,
+          }}
+        />
       </div>
     </nav>
   );
